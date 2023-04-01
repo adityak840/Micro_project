@@ -3,28 +3,17 @@ import { View,Text,StyleSheet,TouchableOpacity,Dimensions } from 'react-native'
 
 const {width,height} = Dimensions.get('screen');
 
-const Room = ({navigation}) => {
-    function getRandomInt(max: number) {
-        return Math.floor(Math.random() * max);
-      }
-    const random = getRandomInt(2);
+const Misc = ({route,navigation}) => {
     return(
         <View style={styles.container}>
             <View style={styles.room}>
                 <Text style={styles.roomText}>
-                    Room 1
+                    Room {route.params.Number}
                 </Text>
             </View>
-            {
-                random ?
-                <View style={styles.condition}>
-                    <Text style={styles.conditionn}>The room is Noisy</Text>
-                </View> 
-                :
-                <View style={styles.condition}>
-                    <Text style={styles.conditionq}>The room is Quiet</Text>
-                </View>
-            }
+            <View style={styles.condition}>
+                <Text style={styles.conditionn}>NaN</Text>
+            </View> 
             <TouchableOpacity onPress={()=>{
                 navigation.goBack()
             }}>
@@ -34,7 +23,7 @@ const Room = ({navigation}) => {
     )
 }
 
-export default Room
+export default Misc
 
 const styles = StyleSheet.create({
     container: {

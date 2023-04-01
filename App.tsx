@@ -1,5 +1,7 @@
 import React from "react";
+import Home from "./components/Home";
 import Room from './components/Room';
+import Misc from './components/Misc'
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -14,11 +16,13 @@ const App = () => {
   return(
     <NavigationContainer>
       <Stack.Navigator
-      screenOptions={{
-        headerShown: false
-      }}
+        screenOptions={{
+          headerShown: false
+        }}
       >
-        <Stack.Screen name="Room" component={Room}/>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Room" component={Room} />
+        <Stack.Screen name="Misc" component={Misc} />
       </Stack.Navigator>
     </NavigationContainer>
   )
